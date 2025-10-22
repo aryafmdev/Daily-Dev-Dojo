@@ -72,3 +72,12 @@ export function createMultiplier(factor: number): (input: number) => number {
     return input * factor;
   };
 }
+
+// lib/createCounter.ts
+export function createCounter(n: number): () => number {
+  let count: number = n;
+
+  return function (): number {
+    return count++;
+  };
+}
